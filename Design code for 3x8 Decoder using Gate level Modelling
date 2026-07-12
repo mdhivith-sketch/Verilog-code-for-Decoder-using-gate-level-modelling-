@@ -1,0 +1,17 @@
+module decoder3x8(i2,i1,i0,y0,y1,y2,y3,y4,y5,y6,y7);
+input i2,i1,i0;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+
+wire i2_bar,i1_bar,i0_bar;
+not(i2_bar,i2);
+not(i1_bar,i1);
+not(i0_bar,i0);
+and(y0,i2_bar,i1_bar,i0_bar);
+and(y1,i2_bar,i1_bar,i0);
+and(y2,i2_bar,i1,i0_bar);
+and(y3,i2_bar,i1,i0);
+and(y4,i2,i1_bar,i0_bar);
+and(y5,i2,i1_bar,i0);
+and(y6,i2,i1,i0_bar);
+and(y7,i2,i1,i0);
+endmodule
